@@ -676,5 +676,201 @@
             updateTotalScore();
         }
         
+        // Add event listeners for radio buttons to handle direct clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.checked) {
+                        const category = this.name;
+                        const points = parseInt(this.value);
+                        const scoreOption = this.closest('.score-option');
+                        
+                        // Remove selected class from all options in this category
+                        const options = scoreOption.parentNode.querySelectorAll('.score-option');
+                        options.forEach(opt => opt.classList.remove('selected'));
+                        
+                        // Add selected class to this option
+                        scoreOption.classList.add('selected');
+                        
+                        // Store the score
+                        scores[category] = points;
+                        
+                        // Update total score
+                        updateTotalScore();
+                    }
+                });
+            });
+            
+            // Set today's date
+            document.getElementById('evaluationDate').value = new Date().toISOString().split('T')[0];
+        });
+        
         function updateTotalScore() {
             const total = Object.values(scores).reduce((sum, score) => sum + score, 0);
+            document.getElementById('totalScore').textContent = total;
+                        // Update the color of the total score based on value
+            const totalScoreElement = document.getElementById('totalScore');
+            if (total >= 85) {
+                totalScoreElement.style.color = '#4CAF50'; // Green
+            } else if (total >= 70) {
+                totalScoreElement.style.color = '#8BC34A'; // Light green
+            } else if (total >= 50) {
+                totalScoreElement.style.color = '#FFC107'; // Yellow
+            } else if (total >= 30) {
+                totalScoreElement.style.color = '#FF9800'; // Orange
+            } else {
+                totalScoreElement.style.color = '#F44336'; // Red
+            }
+        }
+        
+        function generateReport() {
+            const teamName = document.getElementById('teamName').value;
+            const projectTitle = document.getElementById('projectTitle').value;
+            const judgeName = document.getElementById('judgeName').value;
+            const evaluationDate = document.getElementById('evaluationDate').value;
+            
+            if (!teamName || !projectTitle || !judgeName) {
+                alert('Please fill in all required fields: Team Name, Project Title, and Judge Name');
+                return;
+            }
+            
+            // Check if all criteria have been scored
+            const categories = ['problem', 'innovation', 'technology', 'ux', 'feasibility', 'presentation'];
+            const missingCategories = categories.filter(cat => !scores[cat]);
+            
+            if (missingCategories.length > 0) {
+                alert(`Please score all criteria before generating the report. Missing: ${missingCategories.join(', ')}`);
+                return;
+            }
+            
+            // Gather comments
+            const comments = {
+                problem: document.getElementById('problemComments').value,
+                innovation: document.getElementById('innovationComments').value,
+                technology: document.getElementById('technologyComments').value,
+                ux: document.getElementById('uxComments').value,
+                feasibility: document.getElementById('feasibilityComments').value,
+                presentation: document.getElementById('presentationComments').value
+            };
+            
+            // Create report HTML
+            const totalScore = Object.values(scores).reduce((sum, score) => sum + score, 0);
+            
+            let reportHTML = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Hackathon Scoring Report: ${projectTitle}</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+                        .report-container { max-width: 800px; margin: 0 auto; }
+                        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
+                        h1 { color: #2c3e50; }
+                        .score-display { font-size: 24px; font-weight: bold; text-align: center; margin: 20px 0; }
+                        .criteria { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+                        .criteria-title { font-weight: bold; color: #34495e; }
+                        .criteria-score { float: right; }
+                        .comments { background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; }
+                        .footer { margin-top: 30px; text-align: right; font-style: italic; color: #7f8c8d; }
+                    </style>
+                </head>
+                <body>
+                    <div class="report-container">
+                        <div class="header">
+                            <h1>AI Campus Network Hackathon Scoring Report</h1>
+                            <h2>${projectTitle}</h2>
+                            <p>Team: ${teamName} | Judge: ${judgeName} | Date: ${evaluationDate}</p>
+                        </div>
+                        
+                        <div class="score-display">
+                            Total Score: <span style="color: ${totalScore >= 70 ? '#27ae60' : '#e74c3c'}">${totalScore}/100</span>
+                        </div>
+                        
+                        <h3>Detailed Scores:</h3>
+                        
+                        <div class="criteria">
+                            <div class="criteria-title">1. Problem Understanding & Impact <span class="criteria-score">${scores.problem}/20</span></div>
+                            <div class="comments">${comments.problem || 'No comments provided'}</div>
+                        </div>
+                        
+                        <div class="criteria">
+                            <div class="criteria-title">2. Innovation & Originality <span class="criteria-score">${scores.innovation}/20</span></div>
+                            <div class="comments">${comments.innovation || 'No comments provided'}</div>
+                        </div>
+                        
+                        <div class="criteria">
+                            <div class="criteria-title">3. AI/Technology Implementation <span class="criteria-score">${scores.technology}/25</span></div>
+                            <div class="comments">${comments.technology || 'No comments provided'}</div>
+                        </div>
+                        
+                        <div class="criteria">
+                            <div class="criteria-title">4. User Experience (UX) & Design (UI) <span class="criteria-score">${scores.ux}/15</span></div>
+                            <div class="comments">${comments.ux || 'No comments provided'}</div>
+                        </div>
+                        
+                        <div class="criteria">
+                            <div class="criteria-title">5. Feasibility & Scalability <span class="criteria-score">${scores.feasibility}/10</span></div>
+                            <div class="comments">${comments.feasibility || 'No comments provided'}</div>
+                        </div>
+                        
+                        <div class="criteria">
+                            <div class="criteria-title">6. Presentation & Communication <span class="criteria-score">${scores.presentation}/10</span></div>
+                            <div class="comments">${comments.presentation || 'No comments provided'}</div>
+                        </div>
+                        
+                        <div class="footer">
+                            <p>Generated by AI Campus Network Hackathon Scoring System</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            // Open report in new window
+            const reportWindow = window.open('', '_blank');
+            reportWindow.document.open();
+            reportWindow.document.write(reportHTML);
+            reportWindow.document.close();
+            
+            // Optionally print automatically
+            // reportWindow.print();
+        }
+        
+        function resetForm() {
+            if (confirm('Are you sure you want to reset the entire form? All scores and comments will be lost.')) {
+                // Reset form fields
+                document.getElementById('teamName').value = '';
+                document.getElementById('projectTitle').value = '';
+                document.getElementById('judgeName').value = '';
+                document.getElementById('evaluationDate').value = new Date().toISOString().split('T')[0];
+                
+                // Reset all radio buttons
+                const radioButtons = document.querySelectorAll('input[type="radio"]');
+                radioButtons.forEach(radio => {
+                    radio.checked = false;
+                });
+                
+                // Remove selected class from all score options
+                const scoreOptions = document.querySelectorAll('.score-option');
+                scoreOptions.forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                // Reset all textareas
+                const textareas = document.querySelectorAll('textarea');
+                textareas.forEach(textarea => {
+                    textarea.value = '';
+                });
+                
+                // Reset scores object
+                scores = {};
+                
+                // Update total score display
+                document.getElementById('totalScore').textContent = '0';
+                document.getElementById('totalScore').style.color = '#ffd700';
+            }
+        }
+    </script>
+</body>
+</html>
