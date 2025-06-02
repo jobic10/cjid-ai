@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Campus Network Hackathon Scoring Sheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .team-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-group label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-group input {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .info-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .scoring-section {
+            padding: 30px;
+        }
+        
+        .criteria {
+            margin-bottom: 35px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .criteria:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .criteria-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .criteria-header:hover {
+            background: linear-gradient(45deg, #5a67d8, #6b46c1);
+        }
+        
+        .criteria-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .criteria-points {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .criteria-content {
+            padding: 25px;
+            background: white;
+        }
+        
+        .description {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            color: #495057;
+            line-height: 1.6;
+        }
+        
+        .score-options {
+            display: grid;
+            gap: 12px;
+        }
+        
+        .score-option {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .score-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .score-option.selected {
+            border-color: #667eea;
+            background: linear-gradient(45deg, #f8f9ff, #e6f0ff);
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+        }
+        
+        .score-option input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.2);
+            accent-color: #667eea;
+        }
+        
+        .score-content {
+            flex: 1;
+        }
+        
+        .score-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .score-desc {
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .comments-section {
+            margin-top: 20px;
+        }
+        
+        .comments-section label {
+            display: block;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .comments-section textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .comments-section textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .total-score {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        
+        .total-score h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .score-display {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .actions {
+            padding: 30px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Campus Network Hackathon</h1>
+            <p>Project Scoring Sheet</p>
+        </div>
+        
+        <div class="team-info">
+            <div class="info-grid">
+                <div class="info-group">
+                    <label for="teamName">Team Name</label>
+                    <input type="text" id="teamName" name="teamName" placeholder="Enter team name">
+                </div>
+                <div class="info-group">
+                    <label for="projectTitle">Project Title</label>
+                    <input type="text" id="projectTitle" name="projectTitle" placeholder="Enter project title">
+                </div>
+                <div class="info-group">
+                    <label for="judgeName">Judge Name</label>
+                    <input type="text" id="judgeName" name="judgeName" placeholder="Enter your name">
+                </div>
+                <div class="info-group">
+                    <label for="evaluationDate">Evaluation Date</label>
+                    <input type="date" id="evaluationDate" name="evaluationDate">
+                </div>
+            </div>
+        </div>
+        
+        <div class="scoring-section">
+            <div class="criteria">
+                <div class="criteria-header">
+                    <div class="criteria-title">Problem Understanding & Impact</div>
+                    <div class="criteria-points">Maximum: 20 Points</div>
+                </div>
+                <div class="criteria-content">
+                    <div class="description">
+                        How clearly is the problem defined? Is it a relevant and significant real-world challenge? What is the potential positive impact of the solution on its target users or society?
+                    </div>
+                    <div class="score-options">
+                        <div class="score-option" onclick="selectScore(this, 'problem', 20)">
+                            <input type="radio" name="problem" value="20" id="problem-5">
+                            <div class="score-content">
+                                <div class="score-label">5 - Excellent (20 pts)</div>
+                                <div class="score-desc">Problem is exceptionally clear, highly relevant, and the solution demonstrates profound potential for positive impact.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'problem', 16)">
+                            <input type="radio" name="problem" value="16" id="problem-4">
+                            <div class="score-content">
+                                <div class="score-label">4 - Good (16 pts)</div>
+                                <div class="score-desc">Problem is clear and relevant, solution has strong potential for positive impact.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'problem', 12)">
+                            <input type="radio" name="problem" value="12" id="problem-3">
+                            <div class="score-content">
+                                <div class="score-label">3 - Fair (12 pts)</div>
+                                <div class="score-desc">Problem is adequately defined, solution has some potential impact.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'problem', 8)">
+                            <input type="radio" name="problem" value="8" id="problem-2">
+                            <div class="score-content">
+                                <div class="score-label">2 - Needs Improvement (8 pts)</div>
+                                <div class="score-desc">Problem definition is vague or relevance is questionable, limited potential impact.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'problem', 4)">
+                            <input type="radio" name="problem" value="4" id="problem-1">
+                            <div class="score-content">
+                                <div class="score-label">1 - Poor (4 pts)</div>
+                                <div class="score-desc">Problem is unclear or irrelevant, no discernible impact.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <label for="problemComments">Comments & Feedback:</label>
+                        <textarea id="problemComments" name="problemComments" placeholder="Provide specific feedback about problem understanding and impact..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria">
+                <div class="criteria-header">
+                    <div class="criteria-title">Innovation & Originality</div>
+                    <div class="criteria-points">Maximum: 20 Points</div>
+                </div>
+                <div class="criteria-content">
+                    <div class="description">
+                        How novel or creative is the proposed solution? Does it offer a unique approach compared to existing methods, or is it a significant improvement on current solutions?
+                    </div>
+                    <div class="score-options">
+                        <div class="score-option" onclick="selectScore(this, 'innovation', 20)">
+                            <input type="radio" name="innovation" value="20" id="innovation-5">
+                            <div class="score-content">
+                                <div class="score-label">5 - Excellent (20 pts)</div>
+                                <div class="score-desc">Solution is highly innovative and demonstrates significant originality, offering a fresh perspective or breakthrough.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'innovation', 16)">
+                            <input type="radio" name="innovation" value="16" id="innovation-4">
+                            <div class="score-content">
+                                <div class="score-label">4 - Good (16 pts)</div>
+                                <div class="score-desc">Solution shows strong innovative elements and a creative approach.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'innovation', 12)">
+                            <input type="radio" name="innovation" value="12" id="innovation-3">
+                            <div class="score-content">
+                                <div class="score-label">3 - Fair (12 pts)</div>
+                                <div class="score-desc">Solution has some innovative aspects but may build heavily on existing ideas.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'innovation', 8)">
+                            <input type="radio" name="innovation" value="8" id="innovation-2">
+                            <div class="score-content">
+                                <div class="score-label">2 - Needs Improvement (8 pts)</div>
+                                <div class="score-desc">Solution is largely conventional or lacks distinct originality.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'innovation', 4)">
+                            <input type="radio" name="innovation" value="4" id="innovation-1">
+                            <div class="score-content">
+                                <div class="score-label">1 - Poor (4 pts)</div>
+                                <div class="score-desc">Solution is a direct replication of existing methods with no new ideas.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <label for="innovationComments">Comments & Feedback:</label>
+                        <textarea id="innovationComments" name="innovationComments" placeholder="Provide specific feedback about innovation and originality..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria">
+                <div class="criteria-header">
+                    <div class="criteria-title">AI/Technology Implementation</div>
+                    <div class="criteria-points">Maximum: 25 Points</div>
+                </div>
+                <div class="criteria-content">
+                    <div class="description">
+                        How effectively and appropriately is AI/Machine Learning utilized in the solution? Is the technical execution sound? What is the functionality, robustness, and complexity of the prototype developed within the hackathon timeframe?
+                    </div>
+                    <div class="score-options">
+                        <div class="score-option" onclick="selectScore(this, 'technology', 25)">
+                            <input type="radio" name="technology" value="25" id="technology-5">
+                            <div class="score-content">
+                                <div class="score-label">5 - Excellent (25 pts)</div>
+                                <div class="score-desc">AI/ML is central, highly effective, and technically sophisticated. Prototype is robust, highly functional, and demonstrates complex implementation.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'technology', 20)">
+                            <input type="radio" name="technology" value="20" id="technology-4">
+                            <div class="score-content">
+                                <div class="score-label">4 - Good (20 pts)</div>
+                                <div class="score-desc">AI/ML is well-integrated and functional. Prototype is mostly functional and demonstrates good technical understanding.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'technology', 15)">
+                            <input type="radio" name="technology" value="15" id="technology-3">
+                            <div class="score-content">
+                                <div class="score-label">3 - Fair (15 pts)</div>
+                                <div class="score-desc">AI/ML use is present but limited or basic. Prototype has core functionality but may have minor issues.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'technology', 10)">
+                            <input type="radio" name="technology" value="10" id="technology-2">
+                            <div class="score-content">
+                                <div class="score-label">2 - Needs Improvement (10 pts)</div>
+                                <div class="score-desc">AI/ML use is unclear or ineffective. Prototype has significant functional flaws.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'technology', 5)">
+                            <input type="radio" name="technology" value="5" id="technology-1">
+                            <div class="score-content">
+                                <div class="score-label">1 - Poor (5 pts)</div>
+                                <div class="score-desc">No discernible AI/ML implementation or prototype is non-functional.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <label for="technologyComments">Comments & Feedback:</label>
+                        <textarea id="technologyComments" name="technologyComments" placeholder="Provide specific feedback about AI/technology implementation..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria">
+                <div class="criteria-header">
+                    <div class="criteria-title">User Experience (UX) & Design (UI)</div>
+                    <div class="criteria-points">Maximum: 15 Points</div>
+                </div>
+                <div class="criteria-content">
+                    <div class="description">
+                        How intuitive, user-friendly, and aesthetically pleasing is the solution's interface? Does the design enhance the user's interaction with the AI functionality?
+                    </div>
+                    <div class="score-options">
+                        <div class="score-option" onclick="selectScore(this, 'ux', 15)">
+                            <input type="radio" name="ux" value="15" id="ux-5">
+                            <div class="score-content">
+                                <div class="score-label">5 - Excellent (15 pts)</div>
+                                <div class="score-desc">Exceptional UI/UX design; highly intuitive, visually appealing, and enhances user interaction significantly.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'ux', 12)">
+                            <input type="radio" name="ux" value="12" id="ux-4">
+                            <div class="score-content">
+                                <div class="score-label">4 - Good (12 pts)</div>
+                                <div class="score-desc">Strong UI/UX design; easy to navigate and visually appealing.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'ux', 9)">
+                            <input type="radio" name="ux" value="9" id="ux-3">
+                            <div class="score-content">
+                                <div class="score-label">3 - Fair (9 pts)</div>
+                                <div class="score-desc">Adequate UI/UX design; functional but may lack polish or optimal user flow.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'ux', 6)">
+                            <input type="radio" name="ux" value="6" id="ux-2">
+                            <div class="score-content">
+                                <div class="score-label">2 - Needs Improvement (6 pts)</div>
+                                <div class="score-desc">Poor UI/UX design; difficult to navigate or visually unappealing.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'ux', 3)">
+                            <input type="radio" name="ux" value="3" id="ux-1">
+                            <div class="score-content">
+                                <div class="score-label">1 - Poor (3 pts)</div>
+                                <div class="score-desc">Negligible attention to UI/UX, making the solution unusable.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <label for="uxComments">Comments & Feedback:</label>
+                        <textarea id="uxComments" name="uxComments" placeholder="Provide specific feedback about user experience and design..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria">
+                <div class="criteria-header">
+                    <div class="criteria-title">Feasibility & Scalability</div>
+                    <div class="criteria-points">Maximum: 10 Points</div>
+                </div>
+                <div class="criteria-content">
+                    <div class="description">
+                        Does the solution have realistic potential for future development and implementation? Can it be scaled to reach a larger audience or address a broader scope of the problem?
+                    </div>
+                    <div class="score-options">
+                        <div class="score-option" onclick="selectScore(this, 'feasibility', 10)">
+                            <input type="radio" name="feasibility" value="10" id="feasibility-5">
+                            <div class="score-content">
+                                <div class="score-label">5 - Excellent (10 pts)</div>
+                                <div class="score-desc">Highly feasible for future development and demonstrates clear, strong scalability potential.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'feasibility', 8)">
+                            <input type="radio" name="feasibility" value="8" id="feasibility-4">
+                            <div class="score-content">
+                                <div class="score-label">4 - Good (8 pts)</div>
+                                <div class="score-desc">Good feasibility and clear potential for scalability.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'feasibility', 6)">
+                            <input type="radio" name="feasibility" value="6" id="feasibility-3">
+                            <div class="score-content">
+                                <div class="score-label">3 - Fair (6 pts)</div>
+                                <div class="score-desc">Some feasibility and scalability potential, but may require significant adjustments.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'feasibility', 4)">
+                            <input type="radio" name="feasibility" value="4" id="feasibility-2">
+                            <div class="score-content">
+                                <div class="score-label">2 - Needs Improvement (4 pts)</div>
+                                <div class="score-desc">Limited feasibility or significant barriers to scaling.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'feasibility', 2)">
+                            <input type="radio" name="feasibility" value="2" id="feasibility-1">
+                            <div class="score-content">
+                                <div class="score-label">1 - Poor (2 pts)</div>
+                                <div class="score-desc">Not feasible or no apparent path to scalability.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <label for="feasibilityComments">Comments & Feedback:</label>
+                        <textarea id="feasibilityComments" name="feasibilityComments" placeholder="Provide specific feedback about feasibility and scalability..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria">
+                <div class="criteria-header">
+                    <div class="criteria-title">Presentation & Communication</div>
+                    <div class="criteria-points">Maximum: 10 Points</div>
+                </div>
+                <div class="criteria-content">
+                    <div class="description">
+                        How clearly and persuasively was the project presented? Did the team effectively articulate the problem, their solution, its AI components, and its potential impact?
+                    </div>
+                    <div class="score-options">
+                        <div class="score-option" onclick="selectScore(this, 'presentation', 10)">
+                            <input type="radio" name="presentation" value="10" id="presentation-5">
+                            <div class="score-content">
+                                <div class="score-label">5 - Excellent (10 pts)</div>
+                                <div class="score-desc">Presentation was clear, concise, highly engaging, and effectively conveyed all key aspects of the project.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'presentation', 8)">
+                            <input type="radio" name="presentation" value="8" id="presentation-4">
+                            <div class="score-content">
+                                <div class="score-label">4 - Good (8 pts)</div>
+                                <div class="score-desc">Presentation was clear, well-structured, and effectively communicated the project's essence.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'presentation', 6)">
+                            <input type="radio" name="presentation" value="6" id="presentation-3">
+                            <div class="score-content">
+                                <div class="score-label">3 - Fair (6 pts)</div>
+                                <div class="score-desc">Presentation was understandable but may have lacked clarity or engagement in some areas.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'presentation', 4)">
+                            <input type="radio" name="presentation" value="4" id="presentation-2">
+                            <div class="score-content">
+                                <div class="score-label">2 - Needs Improvement (4 pts)</div>
+                                <div class="score-desc">Presentation was confusing, poorly structured, or failed to convey key information.</div>
+                            </div>
+                        </div>
+                        <div class="score-option" onclick="selectScore(this, 'presentation', 2)">
+                            <input type="radio" name="presentation" value="2" id="presentation-1">
+                            <div class="score-content">
+                                <div class="score-label">1 - Poor (2 pts)</div>
+                                <div class="score-desc">Very poor presentation, making it difficult to understand the project.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <label for="presentationComments">Comments & Feedback:</label>
+                        <textarea id="presentationComments" name="presentationComments" placeholder="Provide specific feedback about presentation and communication..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="total-score">
+            <h2>Total Score</h2>
+            <div class="score-display"><span id="totalScore">0</span> / 100</div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+            <button class="btn btn-secondary" onclick="resetForm()">Reset Form</button>
+        </div>
+    </div>
+
+    <script>
+        let scores = {};
+        
+        function selectScore(element, category, points) {
+            // Remove selected class from all options in this category
+            const options = element.parentNode.querySelectorAll('.score-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Update the radio button
+            const radio = element.querySelector('input[type="radio"]');
+            radio.checked = true;
+            
+            // Store the score
+            scores[category] = points;
+            
+            // Update total score
+            updateTotalScore();
+        }
+        
+        function updateTotalScore() {
+            const total = Object.values(scores).reduce((sum, score) => sum + score, 0);
