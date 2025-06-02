@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,58 +11,58 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        
+
         .header {
             background: linear-gradient(45deg, #2c3e50, #34495e);
             color: white;
             padding: 30px;
             text-align: center;
         }
-        
+
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 300;
         }
-        
+
         .header p {
             opacity: 0.9;
             font-size: 1.1em;
         }
-        
+
         .team-info {
             background: #f8f9fa;
             padding: 25px;
             border-bottom: 1px solid #e9ecef;
         }
-        
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .info-group {
             display: flex;
             flex-direction: column;
         }
-        
+
         .info-group label {
             font-weight: 600;
             color: #495057;
@@ -70,7 +71,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .info-group input {
             padding: 12px;
             border: 2px solid #e9ecef;
@@ -78,17 +79,17 @@
             font-size: 1em;
             transition: all 0.3s ease;
         }
-        
+
         .info-group input:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-        
+
         .scoring-section {
             padding: 30px;
         }
-        
+
         .criteria {
             margin-bottom: 35px;
             border: 1px solid #e9ecef;
@@ -96,11 +97,11 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .criteria:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .criteria-header {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
@@ -108,27 +109,27 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .criteria-header:hover {
             background: linear-gradient(45deg, #5a67d8, #6b46c1);
         }
-        
+
         .criteria-title {
             font-size: 1.3em;
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+
         .criteria-points {
             font-size: 0.9em;
             opacity: 0.9;
         }
-        
+
         .criteria-content {
             padding: 25px;
             background: white;
         }
-        
+
         .description {
             margin-bottom: 20px;
             padding: 15px;
@@ -139,12 +140,12 @@
             color: #495057;
             line-height: 1.6;
         }
-        
+
         .score-options {
             display: grid;
             gap: 12px;
         }
-        
+
         .score-option {
             display: flex;
             align-items: flex-start;
@@ -155,44 +156,44 @@
             transition: all 0.3s ease;
             background: white;
         }
-        
+
         .score-option:hover {
             border-color: #667eea;
             background: #f8f9ff;
         }
-        
+
         .score-option.selected {
             border-color: #667eea;
             background: linear-gradient(45deg, #f8f9ff, #e6f0ff);
             box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
         }
-        
+
         .score-option input[type="radio"] {
             margin-right: 15px;
             transform: scale(1.2);
             accent-color: #667eea;
         }
-        
+
         .score-content {
             flex: 1;
         }
-        
+
         .score-label {
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 5px;
             font-size: 1.1em;
         }
-        
+
         .score-desc {
             color: #6c757d;
             line-height: 1.5;
         }
-        
+
         .comments-section {
             margin-top: 20px;
         }
-        
+
         .comments-section label {
             display: block;
             font-weight: 600;
@@ -200,7 +201,7 @@
             margin-bottom: 10px;
             font-size: 1em;
         }
-        
+
         .comments-section textarea {
             width: 100%;
             padding: 15px;
@@ -212,13 +213,13 @@
             font-family: inherit;
             transition: all 0.3s ease;
         }
-        
+
         .comments-section textarea:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-        
+
         .total-score {
             background: linear-gradient(45deg, #2c3e50, #34495e);
             color: white;
@@ -227,25 +228,25 @@
             margin-top: 30px;
             border-radius: 12px;
         }
-        
+
         .total-score h2 {
             font-size: 2em;
             margin-bottom: 10px;
         }
-        
+
         .score-display {
             font-size: 3em;
             font-weight: bold;
             color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        
+
         .actions {
             padding: 30px;
             text-align: center;
             background: #f8f9fa;
         }
-        
+
         .btn {
             padding: 15px 30px;
             margin: 0 10px;
@@ -258,50 +259,148 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .btn-primary {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
-        
+
         .btn-secondary {
             background: #6c757d;
             color: white;
         }
-        
+
         .btn-secondary:hover {
             background: #5a6268;
             transform: translateY(-2px);
         }
-        
+
+        /* Report modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .export-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .export-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .export-pdf {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .export-word {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .export-excel {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .export-print {
+            background-color: #3498db;
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .info-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .header h1 {
                 font-size: 2em;
             }
-            
+
             .container {
                 margin: 10px;
                 border-radius: 15px;
             }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+
+            .export-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .export-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>AI Campus Network Hackathon</h1>
             <p>Project Scoring Sheet</p>
         </div>
-        
+
         <div class="team-info">
             <div class="info-grid">
                 <div class="info-group">
@@ -322,7 +421,8 @@
                 </div>
             </div>
         </div>
-        
+
+
         <div class="scoring-section">
             <div class="criteria">
                 <div class="criteria-header">
@@ -331,35 +431,40 @@
                 </div>
                 <div class="criteria-content">
                     <div class="description">
-                        How clearly is the problem defined? Is it a relevant and significant real-world challenge? What is the potential positive impact of the solution on its target users or society?
+                        How clearly is the problem defined? Is it a relevant and significant real-world challenge? What
+                        is the potential positive impact of the solution on its target users or society?
                     </div>
                     <div class="score-options">
                         <div class="score-option" onclick="selectScore(this, 'problem', 20)">
                             <input type="radio" name="problem" value="20" id="problem-5">
                             <div class="score-content">
                                 <div class="score-label">5 - Excellent (20 pts)</div>
-                                <div class="score-desc">Problem is exceptionally clear, highly relevant, and the solution demonstrates profound potential for positive impact.</div>
+                                <div class="score-desc">Problem is exceptionally clear, highly relevant, and the
+                                    solution demonstrates profound potential for positive impact.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'problem', 16)">
                             <input type="radio" name="problem" value="16" id="problem-4">
                             <div class="score-content">
                                 <div class="score-label">4 - Good (16 pts)</div>
-                                <div class="score-desc">Problem is clear and relevant, solution has strong potential for positive impact.</div>
+                                <div class="score-desc">Problem is clear and relevant, solution has strong potential for
+                                    positive impact.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'problem', 12)">
                             <input type="radio" name="problem" value="12" id="problem-3">
                             <div class="score-content">
                                 <div class="score-label">3 - Fair (12 pts)</div>
-                                <div class="score-desc">Problem is adequately defined, solution has some potential impact.</div>
+                                <div class="score-desc">Problem is adequately defined, solution has some potential
+                                    impact.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'problem', 8)">
                             <input type="radio" name="problem" value="8" id="problem-2">
                             <div class="score-content">
                                 <div class="score-label">2 - Needs Improvement (8 pts)</div>
-                                <div class="score-desc">Problem definition is vague or relevance is questionable, limited potential impact.</div>
+                                <div class="score-desc">Problem definition is vague or relevance is questionable,
+                                    limited potential impact.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'problem', 4)">
@@ -372,7 +477,8 @@
                     </div>
                     <div class="comments-section">
                         <label for="problemComments">Comments & Feedback:</label>
-                        <textarea id="problemComments" name="problemComments" placeholder="Provide specific feedback about problem understanding and impact..."></textarea>
+                        <textarea id="problemComments" name="problemComments"
+                            placeholder="Provide specific feedback about problem understanding and impact..."></textarea>
                     </div>
                 </div>
             </div>
@@ -384,48 +490,55 @@
                 </div>
                 <div class="criteria-content">
                     <div class="description">
-                        How novel or creative is the proposed solution? Does it offer a unique approach compared to existing methods, or is it a significant improvement on current solutions?
+                        How novel or creative is the proposed solution? Does it offer a unique approach compared to
+                        existing methods, or is it a significant improvement on current solutions?
                     </div>
                     <div class="score-options">
                         <div class="score-option" onclick="selectScore(this, 'innovation', 20)">
                             <input type="radio" name="innovation" value="20" id="innovation-5">
                             <div class="score-content">
                                 <div class="score-label">5 - Excellent (20 pts)</div>
-                                <div class="score-desc">Solution is highly innovative and demonstrates significant originality, offering a fresh perspective or breakthrough.</div>
+                                <div class="score-desc">Solution is highly innovative and demonstrates significant
+                                    originality, offering a fresh perspective or breakthrough.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'innovation', 16)">
                             <input type="radio" name="innovation" value="16" id="innovation-4">
                             <div class="score-content">
                                 <div class="score-label">4 - Good (16 pts)</div>
-                                <div class="score-desc">Solution shows strong innovative elements and a creative approach.</div>
+                                <div class="score-desc">Solution shows strong innovative elements and a creative
+                                    approach.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'innovation', 12)">
                             <input type="radio" name="innovation" value="12" id="innovation-3">
                             <div class="score-content">
                                 <div class="score-label">3 - Fair (12 pts)</div>
-                                <div class="score-desc">Solution has some innovative aspects but may build heavily on existing ideas.</div>
+                                <div class="score-desc">Solution has some innovative aspects but may build heavily on
+                                    existing ideas.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'innovation', 8)">
                             <input type="radio" name="innovation" value="8" id="innovation-2">
                             <div class="score-content">
                                 <div class="score-label">2 - Needs Improvement (8 pts)</div>
-                                <div class="score-desc">Solution is largely conventional or lacks distinct originality.</div>
+                                <div class="score-desc">Solution is largely conventional or lacks distinct originality.
+                                </div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'innovation', 4)">
                             <input type="radio" name="innovation" value="4" id="innovation-1">
                             <div class="score-content">
                                 <div class="score-label">1 - Poor (4 pts)</div>
-                                <div class="score-desc">Solution is a direct replication of existing methods with no new ideas.</div>
+                                <div class="score-desc">Solution is a direct replication of existing methods with no new
+                                    ideas.</div>
                             </div>
                         </div>
                     </div>
                     <div class="comments-section">
                         <label for="innovationComments">Comments & Feedback:</label>
-                        <textarea id="innovationComments" name="innovationComments" placeholder="Provide specific feedback about innovation and originality..."></textarea>
+                        <textarea id="innovationComments" name="innovationComments"
+                            placeholder="Provide specific feedback about innovation and originality..."></textarea>
                     </div>
                 </div>
             </div>
@@ -437,48 +550,57 @@
                 </div>
                 <div class="criteria-content">
                     <div class="description">
-                        How effectively and appropriately is AI/Machine Learning utilized in the solution? Is the technical execution sound? What is the functionality, robustness, and complexity of the prototype developed within the hackathon timeframe?
+                        How effectively and appropriately is AI/Machine Learning utilized in the solution? Is the
+                        technical execution sound? What is the functionality, robustness, and complexity of the
+                        prototype developed within the hackathon timeframe?
                     </div>
                     <div class="score-options">
                         <div class="score-option" onclick="selectScore(this, 'technology', 25)">
                             <input type="radio" name="technology" value="25" id="technology-5">
                             <div class="score-content">
                                 <div class="score-label">5 - Excellent (25 pts)</div>
-                                <div class="score-desc">AI/ML is central, highly effective, and technically sophisticated. Prototype is robust, highly functional, and demonstrates complex implementation.</div>
+                                <div class="score-desc">AI/ML is central, highly effective, and technically
+                                    sophisticated. Prototype is robust, highly functional, and demonstrates complex
+                                    implementation.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'technology', 20)">
                             <input type="radio" name="technology" value="20" id="technology-4">
                             <div class="score-content">
                                 <div class="score-label">4 - Good (20 pts)</div>
-                                <div class="score-desc">AI/ML is well-integrated and functional. Prototype is mostly functional and demonstrates good technical understanding.</div>
+                                <div class="score-desc">AI/ML is well-integrated and functional. Prototype is mostly
+                                    functional and demonstrates good technical understanding.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'technology', 15)">
                             <input type="radio" name="technology" value="15" id="technology-3">
                             <div class="score-content">
                                 <div class="score-label">3 - Fair (15 pts)</div>
-                                <div class="score-desc">AI/ML use is present but limited or basic. Prototype has core functionality but may have minor issues.</div>
+                                <div class="score-desc">AI/ML use is present but limited or basic. Prototype has core
+                                    functionality but may have minor issues.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'technology', 10)">
                             <input type="radio" name="technology" value="10" id="technology-2">
                             <div class="score-content">
                                 <div class="score-label">2 - Needs Improvement (10 pts)</div>
-                                <div class="score-desc">AI/ML use is unclear or ineffective. Prototype has significant functional flaws.</div>
+                                <div class="score-desc">AI/ML use is unclear or ineffective. Prototype has significant
+                                    functional flaws.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'technology', 5)">
                             <input type="radio" name="technology" value="5" id="technology-1">
                             <div class="score-content">
                                 <div class="score-label">1 - Poor (5 pts)</div>
-                                <div class="score-desc">No discernible AI/ML implementation or prototype is non-functional.</div>
+                                <div class="score-desc">No discernible AI/ML implementation or prototype is
+                                    non-functional.</div>
                             </div>
                         </div>
                     </div>
                     <div class="comments-section">
                         <label for="technologyComments">Comments & Feedback:</label>
-                        <textarea id="technologyComments" name="technologyComments" placeholder="Provide specific feedback about AI/technology implementation..."></textarea>
+                        <textarea id="technologyComments" name="technologyComments"
+                            placeholder="Provide specific feedback about AI/technology implementation..."></textarea>
                     </div>
                 </div>
             </div>
@@ -490,48 +612,55 @@
                 </div>
                 <div class="criteria-content">
                     <div class="description">
-                        How intuitive, user-friendly, and aesthetically pleasing is the solution's interface? Does the design enhance the user's interaction with the AI functionality?
+                        How intuitive, user-friendly, and aesthetically pleasing is the solution's interface? Does the
+                        design enhance the user's interaction with the AI functionality?
                     </div>
                     <div class="score-options">
                         <div class="score-option" onclick="selectScore(this, 'ux', 15)">
                             <input type="radio" name="ux" value="15" id="ux-5">
                             <div class="score-content">
                                 <div class="score-label">5 - Excellent (15 pts)</div>
-                                <div class="score-desc">Exceptional UI/UX design; highly intuitive, visually appealing, and enhances user interaction significantly.</div>
+                                <div class="score-desc">Exceptional UI/UX design; highly intuitive, visually appealing,
+                                    and enhances user interaction significantly.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'ux', 12)">
                             <input type="radio" name="ux" value="12" id="ux-4">
                             <div class="score-content">
                                 <div class="score-label">4 - Good (12 pts)</div>
-                                <div class="score-desc">Strong UI/UX design; easy to navigate and visually appealing.</div>
+                                <div class="score-desc">Strong UI/UX design; easy to navigate and visually appealing.
+                                </div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'ux', 9)">
                             <input type="radio" name="ux" value="9" id="ux-3">
                             <div class="score-content">
                                 <div class="score-label">3 - Fair (9 pts)</div>
-                                <div class="score-desc">Adequate UI/UX design; functional but may lack polish or optimal user flow.</div>
+                                <div class="score-desc">Adequate UI/UX design; functional but may lack polish or optimal
+                                    user flow.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'ux', 6)">
                             <input type="radio" name="ux" value="6" id="ux-2">
                             <div class="score-content">
                                 <div class="score-label">2 - Needs Improvement (6 pts)</div>
-                                <div class="score-desc">Poor UI/UX design; difficult to navigate or visually unappealing.</div>
+                                <div class="score-desc">Poor UI/UX design; difficult to navigate or visually
+                                    unappealing.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'ux', 3)">
                             <input type="radio" name="ux" value="3" id="ux-1">
                             <div class="score-content">
                                 <div class="score-label">1 - Poor (3 pts)</div>
-                                <div class="score-desc">Negligible attention to UI/UX, making the solution unusable.</div>
+                                <div class="score-desc">Negligible attention to UI/UX, making the solution unusable.
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="comments-section">
                         <label for="uxComments">Comments & Feedback:</label>
-                        <textarea id="uxComments" name="uxComments" placeholder="Provide specific feedback about user experience and design..."></textarea>
+                        <textarea id="uxComments" name="uxComments"
+                            placeholder="Provide specific feedback about user experience and design..."></textarea>
                     </div>
                 </div>
             </div>
@@ -543,14 +672,16 @@
                 </div>
                 <div class="criteria-content">
                     <div class="description">
-                        Does the solution have realistic potential for future development and implementation? Can it be scaled to reach a larger audience or address a broader scope of the problem?
+                        Does the solution have realistic potential for future development and implementation? Can it be
+                        scaled to reach a larger audience or address a broader scope of the problem?
                     </div>
                     <div class="score-options">
                         <div class="score-option" onclick="selectScore(this, 'feasibility', 10)">
                             <input type="radio" name="feasibility" value="10" id="feasibility-5">
                             <div class="score-content">
                                 <div class="score-label">5 - Excellent (10 pts)</div>
-                                <div class="score-desc">Highly feasible for future development and demonstrates clear, strong scalability potential.</div>
+                                <div class="score-desc">Highly feasible for future development and demonstrates clear,
+                                    strong scalability potential.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'feasibility', 8)">
@@ -564,7 +695,8 @@
                             <input type="radio" name="feasibility" value="6" id="feasibility-3">
                             <div class="score-content">
                                 <div class="score-label">3 - Fair (6 pts)</div>
-                                <div class="score-desc">Some feasibility and scalability potential, but may require significant adjustments.</div>
+                                <div class="score-desc">Some feasibility and scalability potential, but may require
+                                    significant adjustments.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'feasibility', 4)">
@@ -584,7 +716,8 @@
                     </div>
                     <div class="comments-section">
                         <label for="feasibilityComments">Comments & Feedback:</label>
-                        <textarea id="feasibilityComments" name="feasibilityComments" placeholder="Provide specific feedback about feasibility and scalability..."></textarea>
+                        <textarea id="feasibilityComments" name="feasibilityComments"
+                            placeholder="Provide specific feedback about feasibility and scalability..."></textarea>
                     </div>
                 </div>
             </div>
@@ -596,48 +729,55 @@
                 </div>
                 <div class="criteria-content">
                     <div class="description">
-                        How clearly and persuasively was the project presented? Did the team effectively articulate the problem, their solution, its AI components, and its potential impact?
+                        How clearly and persuasively was the project presented? Did the team effectively articulate the
+                        problem, their solution, its AI components, and its potential impact?
                     </div>
                     <div class="score-options">
                         <div class="score-option" onclick="selectScore(this, 'presentation', 10)">
                             <input type="radio" name="presentation" value="10" id="presentation-5">
                             <div class="score-content">
                                 <div class="score-label">5 - Excellent (10 pts)</div>
-                                <div class="score-desc">Presentation was clear, concise, highly engaging, and effectively conveyed all key aspects of the project.</div>
+                                <div class="score-desc">Presentation was clear, concise, highly engaging, and
+                                    effectively conveyed all key aspects of the project.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'presentation', 8)">
                             <input type="radio" name="presentation" value="8" id="presentation-4">
                             <div class="score-content">
                                 <div class="score-label">4 - Good (8 pts)</div>
-                                <div class="score-desc">Presentation was clear, well-structured, and effectively communicated the project's essence.</div>
+                                <div class="score-desc">Presentation was clear, well-structured, and effectively
+                                    communicated the project's essence.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'presentation', 6)">
                             <input type="radio" name="presentation" value="6" id="presentation-3">
                             <div class="score-content">
                                 <div class="score-label">3 - Fair (6 pts)</div>
-                                <div class="score-desc">Presentation was understandable but may have lacked clarity or engagement in some areas.</div>
+                                <div class="score-desc">Presentation was understandable but may have lacked clarity or
+                                    engagement in some areas.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'presentation', 4)">
                             <input type="radio" name="presentation" value="4" id="presentation-2">
                             <div class="score-content">
                                 <div class="score-label">2 - Needs Improvement (4 pts)</div>
-                                <div class="score-desc">Presentation was confusing, poorly structured, or failed to convey key information.</div>
+                                <div class="score-desc">Presentation was confusing, poorly structured, or failed to
+                                    convey key information.</div>
                             </div>
                         </div>
                         <div class="score-option" onclick="selectScore(this, 'presentation', 2)">
                             <input type="radio" name="presentation" value="2" id="presentation-1">
                             <div class="score-content">
                                 <div class="score-label">1 - Poor (2 pts)</div>
-                                <div class="score-desc">Very poor presentation, making it difficult to understand the project.</div>
+                                <div class="score-desc">Very poor presentation, making it difficult to understand the
+                                    project.</div>
                             </div>
                         </div>
                     </div>
                     <div class="comments-section">
                         <label for="presentationComments">Comments & Feedback:</label>
-                        <textarea id="presentationComments" name="presentationComments" placeholder="Provide specific feedback about presentation and communication..."></textarea>
+                        <textarea id="presentationComments" name="presentationComments"
+                            placeholder="Provide specific feedback about presentation and communication..."></textarea>
                     </div>
                 </div>
             </div>
@@ -654,62 +794,66 @@
         </div>
     </div>
 
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="reportContent"></div>
+            <div class="export-options">
+                <button class="export-btn export-pdf" onclick="exportToPDF()">
+                    <i class="fas fa-file-pdf"></i> Export as PDF
+                </button>
+                <button class="export-btn export-word" onclick="exportToWord()">
+                    <i class="fas fa-file-word"></i> Export as Word
+                </button>
+                <button class="export-btn export-excel" onclick="exportToExcel()">
+                    <i class="fas fa-file-excel"></i> Export as Excel
+                </button>
+                <button class="export-btn export-print" onclick="printReport()">
+                    <i class="fas fa-print"></i> Print Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jsPDF library for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Include FileSaver for file downloads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <script>
+        // Initialize jsPDF
+        const { jsPDF } = window.jspdf;
+
         let scores = {};
-        
+
         function selectScore(element, category, points) {
             // Remove selected class from all options in this category
             const options = element.parentNode.querySelectorAll('.score-option');
             options.forEach(opt => opt.classList.remove('selected'));
-            
+
             // Add selected class to clicked option
             element.classList.add('selected');
-            
+
             // Update the radio button
             const radio = element.querySelector('input[type="radio"]');
             radio.checked = true;
-            
+
             // Store the score
             scores[category] = points;
-            
+
             // Update total score
             updateTotalScore();
         }
-        
-        // Add event listeners for radio buttons to handle direct clicks
-        document.addEventListener('DOMContentLoaded', function() {
-            const radioButtons = document.querySelectorAll('input[type="radio"]');
-            radioButtons.forEach(radio => {
-                radio.addEventListener('change', function() {
-                    if (this.checked) {
-                        const category = this.name;
-                        const points = parseInt(this.value);
-                        const scoreOption = this.closest('.score-option');
-                        
-                        // Remove selected class from all options in this category
-                        const options = scoreOption.parentNode.querySelectorAll('.score-option');
-                        options.forEach(opt => opt.classList.remove('selected'));
-                        
-                        // Add selected class to this option
-                        scoreOption.classList.add('selected');
-                        
-                        // Store the score
-                        scores[category] = points;
-                        
-                        // Update total score
-                        updateTotalScore();
-                    }
-                });
-            });
-            
-            // Set today's date
-            document.getElementById('evaluationDate').value = new Date().toISOString().split('T')[0];
-        });
-        
+
         function updateTotalScore() {
             const total = Object.values(scores).reduce((sum, score) => sum + score, 0);
             document.getElementById('totalScore').textContent = total;
-                        // Update the color of the total score based on value
+
+            // Update the color of the total score based on value
             const totalScoreElement = document.getElementById('totalScore');
             if (total >= 85) {
                 totalScoreElement.style.color = '#4CAF50'; // Green
@@ -723,27 +867,27 @@
                 totalScoreElement.style.color = '#F44336'; // Red
             }
         }
-        
+
         function generateReport() {
             const teamName = document.getElementById('teamName').value;
             const projectTitle = document.getElementById('projectTitle').value;
             const judgeName = document.getElementById('judgeName').value;
             const evaluationDate = document.getElementById('evaluationDate').value;
-            
+
             if (!teamName || !projectTitle || !judgeName) {
                 alert('Please fill in all required fields: Team Name, Project Title, and Judge Name');
                 return;
             }
-            
+
             // Check if all criteria have been scored
             const categories = ['problem', 'innovation', 'technology', 'ux', 'feasibility', 'presentation'];
             const missingCategories = categories.filter(cat => !scores[cat]);
-            
+
             if (missingCategories.length > 0) {
                 alert(`Please score all criteria before generating the report. Missing: ${missingCategories.join(', ')}`);
                 return;
             }
-            
+
             // Gather comments
             const comments = {
                 problem: document.getElementById('problemComments').value,
@@ -753,17 +897,105 @@
                 feasibility: document.getElementById('feasibilityComments').value,
                 presentation: document.getElementById('presentationComments').value
             };
-            
+
             // Create report HTML
             const totalScore = Object.values(scores).reduce((sum, score) => sum + score, 0);
-            
+
             let reportHTML = `
-                <!DOCTYPE html>
-                <html>
+                <div class="report-container">
+                    <div class="header">
+                        <h1>AI Campus Network Hackathon Scoring Report</h1>
+                        <h2>${projectTitle}</h2>
+                        <p>Team: ${teamName} | Judge: ${judgeName} | Date: ${evaluationDate}</p>
+                    </div>
+                    
+                    <div class="score-display">
+                        Total Score: <span style="color: ${totalScore >= 70 ? '#27ae60' : '#e74c3c'}">${totalScore}/100</span>
+                    </div>
+                    
+                    <h3>Detailed Scores:</h3>
+                    
+                    <div class="criteria">
+                        <div class="criteria-title">1. Problem Understanding & Impact <span class="criteria-score">${scores.problem}/20</span></div>
+                        <div class="comments">${comments.problem || 'No comments provided'}</div>
+                    </div>
+                    
+                    <div class="criteria">
+                        <div class="criteria-title">2. Innovation & Originality <span class="criteria-score">${scores.innovation}/20</span></div>
+                        <div class="comments">${comments.innovation || 'No comments provided'}</div>
+                    </div>
+                    
+                    <div class="criteria">
+                        <div class="criteria-title">3. AI/Technology Implementation <span class="criteria-score">${scores.technology}/25</span></div>
+                        <div class="comments">${comments.technology || 'No comments provided'}</div>
+                    </div>
+                    
+                    <div class="criteria">
+                        <div class="criteria-title">4. User Experience (UX) & Design (UI) <span class="criteria-score">${scores.ux}/15</span></div>
+                        <div class="comments">${comments.ux || 'No comments provided'}</div>
+                    </div>
+                    
+                    <div class="criteria">
+                        <div class="criteria-title">5. Feasibility & Scalability <span class="criteria-score">${scores.feasibility}/10</span></div>
+                        <div class="comments">${comments.feasibility || 'No comments provided'}</div>
+                    </div>
+                    
+                    <div class="criteria">
+                        <div class="criteria-title">6. Presentation & Communication <span class="criteria-score">${scores.presentation}/10</span></div>
+                        <div class="comments">${comments.presentation || 'No comments provided'}</div>
+                    </div>
+                    
+                    <div class="footer">
+                        <p>Generated by AI Campus Network Hackathon Scoring System</p>
+                    </div>
+                </div>
+            `;
+
+            // Display report in modal
+            document.getElementById('reportContent').innerHTML = reportHTML;
+            document.getElementById('reportModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('reportModal').style.display = 'none';
+        }
+
+        function exportToPDF() {
+            const element = document.getElementById('reportContent');
+            const opt = {
+                margin: 10,
+                filename: 'Hackathon_Score_Report.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2canvas(element, {
+                scale: 2,
+                logging: true,
+                useCORS: true
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('Hackathon_Score_Report.pdf');
+            });
+        }
+
+        function exportToWord() {
+            const html = `
+                <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                      xmlns:w="urn:schemas-microsoft-com:office:word" 
+                      xmlns="http://www.w3.org/TR/REC-html40">
                 <head>
-                    <title>Hackathon Scoring Report: ${projectTitle}</title>
+                    <meta charset="UTF-8">
+                    <title>Hackathon Scoring Report</title>
                     <style>
-                        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+                        body { font-family: Arial, sans-serif; line-height: 1.6; }
                         .report-container { max-width: 800px; margin: 0 auto; }
                         .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
                         h1 { color: #2c3e50; }
@@ -776,67 +1008,217 @@
                     </style>
                 </head>
                 <body>
-                    <div class="report-container">
-                        <div class="header">
-                            <h1>AI Campus Network Hackathon Scoring Report</h1>
-                            <h2>${projectTitle}</h2>
-                            <p>Team: ${teamName} | Judge: ${judgeName} | Date: ${evaluationDate}</p>
-                        </div>
-                        
-                        <div class="score-display">
-                            Total Score: <span style="color: ${totalScore >= 70 ? '#27ae60' : '#e74c3c'}">${totalScore}/100</span>
-                        </div>
-                        
-                        <h3>Detailed Scores:</h3>
-                        
-                        <div class="criteria">
-                            <div class="criteria-title">1. Problem Understanding & Impact <span class="criteria-score">${scores.problem}/20</span></div>
-                            <div class="comments">${comments.problem || 'No comments provided'}</div>
-                        </div>
-                        
-                        <div class="criteria">
-                            <div class="criteria-title">2. Innovation & Originality <span class="criteria-score">${scores.innovation}/20</span></div>
-                            <div class="comments">${comments.innovation || 'No comments provided'}</div>
-                        </div>
-                        
-                        <div class="criteria">
-                            <div class="criteria-title">3. AI/Technology Implementation <span class="criteria-score">${scores.technology}/25</span></div>
-                            <div class="comments">${comments.technology || 'No comments provided'}</div>
-                        </div>
-                        
-                        <div class="criteria">
-                            <div class="criteria-title">4. User Experience (UX) & Design (UI) <span class="criteria-score">${scores.ux}/15</span></div>
-                            <div class="comments">${comments.ux || 'No comments provided'}</div>
-                        </div>
-                        
-                        <div class="criteria">
-                            <div class="criteria-title">5. Feasibility & Scalability <span class="criteria-score">${scores.feasibility}/10</span></div>
-                            <div class="comments">${comments.feasibility || 'No comments provided'}</div>
-                        </div>
-                        
-                        <div class="criteria">
-                            <div class="criteria-title">6. Presentation & Communication <span class="criteria-score">${scores.presentation}/10</span></div>
-                            <div class="comments">${comments.presentation || 'No comments provided'}</div>
-                        </div>
-                        
-                        <div class="footer">
-                            <p>Generated by AI Campus Network Hackathon Scoring System</p>
-                        </div>
-                    </div>
+                    ${document.getElementById('reportContent').innerHTML}
                 </body>
                 </html>
             `;
-            
-            // Open report in new window
-            const reportWindow = window.open('', '_blank');
-            reportWindow.document.open();
-            reportWindow.document.write(reportHTML);
-            reportWindow.document.close();
-            
-            // Optionally print automatically
-            // reportWindow.print();
+
+            const blob = new Blob(['\ufeff', html], {
+                type: 'application/msword'
+            });
+
+            // Specify link url
+            const url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+
+            // Specify file name
+            const filename = 'Hackathon_Score_Report.doc';
+
+            // Create download link element
+            const downloadLink = document.createElement('a');
+
+            document.body.appendChild(downloadLink);
+
+            if (navigator.msSaveOrOpenBlob) {
+                navigator.msSaveOrOpenBlob(blob, filename);
+            } else {
+                // Create a link to the file
+                downloadLink.href = url;
+
+                // Setting the file name
+                downloadLink.download = filename;
+
+                // Trigger the click event
+                downloadLink.click();
+            }
+
+            document.body.removeChild(downloadLink);
         }
-        
+
+        function exportToExcel() {
+            // Get the report data
+            const teamName = document.getElementById('teamName').value;
+            const projectTitle = document.getElementById('projectTitle').value;
+            const judgeName = document.getElementById('judgeName').value;
+            const evaluationDate = document.getElementById('evaluationDate').value;
+            const totalScore = Object.values(scores).reduce((sum, score) => sum + score, 0);
+
+            // Gather comments
+            const comments = {
+                problem: document.getElementById('problemComments').value,
+                innovation: document.getElementById('innovationComments').value,
+                technology: document.getElementById('technologyComments').value,
+                ux: document.getElementById('uxComments').value,
+                feasibility: document.getElementById('feasibilityComments').value,
+                presentation: document.getElementById('presentationComments').value
+            };
+
+            // Create Excel content
+            let excelContent = `
+                <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                      xmlns:x="urn:schemas-microsoft-com:office:excel" 
+                      xmlns="http://www.w3.org/TR/REC-html40">
+                <head>
+                    <meta charset="UTF-8">
+                    <!--[if gte mso 9]>
+                    <xml>
+                        <x:ExcelWorkbook>
+                            <x:ExcelWorksheets>
+                                <x:ExcelWorksheet>
+                                    <x:Name>Hackathon Scores</x:Name>
+                                    <x:WorksheetOptions>
+                                        <x:DisplayGridlines/>
+                                    </x:WorksheetOptions>
+                                </x:ExcelWorksheet>
+                            </x:ExcelWorksheets>
+                        </x:ExcelWorkbook>
+                    </xml>
+                    <![endif]-->
+                    <style>
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+                        th, td {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: left;
+                        }
+                        th {
+                            background-color: #f2f2f2;
+                            font-weight: bold;
+                        }
+                        .header {
+                            font-size: 18px;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .total-score {
+                            font-weight: bold;
+                            color: ${totalScore >= 70 ? '#27ae60' : '#e74c3c'};
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">AI Campus Network Hackathon Scoring Report</div>
+                    <div>Project Title: ${projectTitle}</div>
+                    <div>Team: ${teamName}</div>
+                    <div>Judge: ${judgeName}</div>
+                    <div>Date: ${evaluationDate}</div>
+                    <br>
+                    <div class="header">Total Score: <span class="total-score">${totalScore}/100</span></div>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>Score</th>
+                            <th>Max Score</th>
+                            <th>Comments</th>
+                        </tr>
+                        <tr>
+                            <td>Problem Understanding & Impact</td>
+                            <td>${scores.problem}</td>
+                            <td>20</td>
+                            <td>${comments.problem || 'No comments'}</td>
+                        </tr>
+                        <tr>
+                            <td>Innovation & Originality</td>
+                            <td>${scores.innovation}</td>
+                            <td>20</td>
+                            <td>${comments.innovation || 'No comments'}</td>
+                        </tr>
+                        <tr>
+                            <td>AI/Technology Implementation</td>
+                            <td>${scores.technology}</td>
+                            <td>25</td>
+                            <td>${comments.technology || 'No comments'}</td>
+                        </tr>
+                        <tr>
+                            <td>User Experience (UX) & Design (UI)</td>
+                            <td>${scores.ux}</td>
+                            <td>15</td>
+                            <td>${comments.ux || 'No comments'}</td>
+                        </tr>
+                        <tr>
+                            <td>Feasibility & Scalability</td>
+                            <td>${scores.feasibility}</td>
+                            <td>10</td>
+                            <td>${comments.feasibility || 'No comments'}</td>
+                        </tr>
+                        <tr>
+                            <td>Presentation & Communication</td>
+                            <td>${scores.presentation}</td>
+                            <td>10</td>
+                            <td>${comments.presentation || 'No comments'}</td>
+                        </tr>
+                    </table>
+                </body>
+                </html>
+            `;
+
+            // Create blob and download
+            const blob = new Blob(['\ufeff', excelContent], {
+                type: 'application/vnd.ms-excel'
+            });
+
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Hackathon_Score_Report.xls';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        function printReport() {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Hackathon Scoring Report</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+                        .report-container { max-width: 800px; margin: 0 auto; }
+                        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
+                        h1 { color: #2c3e50; }
+                        .score-display { font-size: 24px; font-weight: bold; text-align: center; margin: 20px 0; }
+                        .criteria { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+                        .criteria-title { font-weight: bold; color: #34495e; }
+                        .criteria-score { float: right; }
+                        .comments { background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; }
+                        .footer { margin-top: 30px; text-align: right; font-style: italic; color: #7f8c8d; }
+                        @media print {
+                            body { padding: 0; }
+                            .header { page-break-after: avoid; }
+                            .criteria { page-break-inside: avoid; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${document.getElementById('reportContent').innerHTML}
+                    <script>
+                        window.onload = function() {
+                            setTimeout(function() {
+                                window.print();
+                                window.close();
+                            }, 200);
+                        };
+                    <\/script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
         function resetForm() {
             if (confirm('Are you sure you want to reset the entire form? All scores and comments will be lost.')) {
                 // Reset form fields
@@ -844,33 +1226,47 @@
                 document.getElementById('projectTitle').value = '';
                 document.getElementById('judgeName').value = '';
                 document.getElementById('evaluationDate').value = new Date().toISOString().split('T')[0];
-                
+
                 // Reset all radio buttons
                 const radioButtons = document.querySelectorAll('input[type="radio"]');
                 radioButtons.forEach(radio => {
                     radio.checked = false;
                 });
-                
+
                 // Remove selected class from all score options
                 const scoreOptions = document.querySelectorAll('.score-option');
                 scoreOptions.forEach(option => {
                     option.classList.remove('selected');
                 });
-                
+
                 // Reset all textareas
                 const textareas = document.querySelectorAll('textarea');
                 textareas.forEach(textarea => {
                     textarea.value = '';
                 });
-                
+
                 // Reset scores object
                 scores = {};
-                
+
                 // Update total score display
                 document.getElementById('totalScore').textContent = '0';
                 document.getElementById('totalScore').style.color = '#ffd700';
             }
         }
+
+        // Close modal when clicking outside of it
+        window.onclick = function (event) {
+            const modal = document.getElementById('reportModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Set today's date when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('evaluationDate').value = new Date().toISOString().split('T')[0];
+        });
     </script>
 </body>
+
 </html>
